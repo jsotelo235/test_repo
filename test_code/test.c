@@ -30,6 +30,25 @@ week_t day = {.monday    = "Monday",
 
 
 
+
+typedef struct week_t{
+
+    char *monday;
+    char *tuesday;
+    char *wednesday;
+    char *thursday;
+    char *friday;
+
+}week_t;
+
+week_t day = {.monday    = "Monday",
+              .tuesday   = "Tuesday",
+              .wednesday = "Wednesday",
+              .thursday  = "Thursday",
+              .friday    = "Friday"}; 
+
+
+
 int main(int argc, char *argv[])
 {
     test_t test_nums;
