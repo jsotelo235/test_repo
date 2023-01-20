@@ -1,19 +1,20 @@
 #include <stdio.h>
+#include "test.h"
 
 
-typedef enum test_e{
-    One,
-    Two,
-    Three,
-    Four,
-    Five
-}test_t;
-
-static int start_test(int argc, char *argv[]);
 
 int main(int argc, char *argv[])
 {
+    test_t test_nums;
+
     int nums[] = {One, Two, Three, Four, Five};
+
+    for(int i = 0; i < 5; i++)
+    {
+        test_nums = nums[i];
+
+        printf("Nums: %d\n", test_nums);
+    }
 
     if( argc == 2 ) {
         
