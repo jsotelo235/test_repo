@@ -3,6 +3,25 @@
 
 
 
+
+typedef struct week_t{
+
+    char *monday;
+    char *tuesday;
+    char *wednesday;
+    char *thursday;
+    char *friday;
+
+}week_t;
+
+week_t day = {.monday    = "Monday",
+              .tuesday   = "Tuesday",
+              .wednesday = "Wednesday",
+              .thursday  = "Thursday",
+              .friday    = "Friday"}; 
+
+
+
 int main(int argc, char *argv[])
 {
     test_t test_nums;
@@ -15,6 +34,9 @@ int main(int argc, char *argv[])
 
         printf("Nums: %d\n", test_nums);
     }
+
+    printf("Day: %s\n", day.monday);
+
 
     if( argc == 2 ) {
         
