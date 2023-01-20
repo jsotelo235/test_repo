@@ -9,11 +9,29 @@ typedef enum test_e{
     Five
 }test_t;
 
+typedef struct week_t{
+
+    char *monday;
+    char *tuesday;
+    char *wednesday;
+    char *thursday;
+    char *friday;
+
+}week_t;
+
+week_t day = {.monday    = "Monday",
+              .tuesday   = "Tuesday",
+              .wednesday = "Wednesday",
+              .thursday  = "Thursday",
+              .friday    = "Friday"}; 
+
 static int start_test(int argc, char *argv[]);
 
 int main(int argc, char *argv[])
 {
     int nums[] = {One, Two, Three, Four, Five};
+
+    printf("Day: %s\n", day.monday);
 
     if( argc == 2 ) {
         
