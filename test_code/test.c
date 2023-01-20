@@ -71,7 +71,6 @@ static bool test_months(months_t months);
 int main(int argc, char *argv[])
 {
     test_t test_nums;
-
     int test_arr[6];
 
     int nums[] = {One, Two, Three, Four, Five};
@@ -79,11 +78,7 @@ int main(int argc, char *argv[])
     //char *dir_name = "tmp";
     char *file_name = "crib_checkout.txt";
 
-    for(int i = 0; i < 6; i++)
     {
-        test_nums = nums[i];
-
-        printf("Nums: %d\n", test_nums);
     }
 
     printf("\nStrings...\n\n");
