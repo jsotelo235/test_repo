@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     {
         test_nums = i;
         test_arr[i] = test_nums;
-        printf("Nums: %s\n", test_to_str[test_arr[i]]);
+        printf("Nums: %s\n\n", test_to_str[test_arr[i]]);
     }
 
     if( argc == 2 ) {
