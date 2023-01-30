@@ -8,4 +8,5 @@ typedef enum test_e{
     Five
 }test_t;
 
+extern const char *const test_to_str[];
 static int start_test(int argc, char *argv[]);
