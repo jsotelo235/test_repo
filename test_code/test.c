@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include "test.h"
 
+typedef struct week_s{
+
+    char *monday;
+    char *tuesday;
+    char *wednesday;
+    char *thursday;
+    char *friday;
+
+}week_t;
+
+week_t day = {.monday    = "Monday",
+              .tuesday   = "Tuesday",
+              .wednesday = "Wednesday",
+              .thursday  = "Thursday",
+              .friday    = "Friday"}; 
 
 const char *const test_to_str[] = {
 
@@ -10,44 +25,6 @@ const char *const test_to_str[] = {
     [Four] = "Four",
     [Five] = "Five"
 };
-
-
-typedef struct week_t{
-
-    char *monday;
-    char *tuesday;
-    char *wednesday;
-    char *thursday;
-    char *friday;
-
-}week_t;
-
-week_t day = {.monday    = "Monday",
-              .tuesday   = "Tuesday",
-              .wednesday = "Wednesday",
-              .thursday  = "Thursday",
-              .friday    = "Friday"}; 
-
-
-
-
-typedef struct week_t{
-
-    char *monday;
-    char *tuesday;
-    char *wednesday;
-    char *thursday;
-    char *friday;
-
-}week_t;
-
-week_t day = {.monday    = "Monday",
-              .tuesday   = "Tuesday",
-              .wednesday = "Wednesday",
-              .thursday  = "Thursday",
-              .friday    = "Friday"}; 
-
-
 
 int main(int argc, char *argv[])
 {
@@ -70,7 +47,7 @@ int main(int argc, char *argv[])
     {
         test_nums = i;
         test_arr[i] = test_nums;
-        printf("Nums: %s\n\n", test_to_str[test_arr[i]]);
+        printf("Nums: %s\n", test_to_str[test_arr[i]]);
     }
 
     if( argc == 2 ) {
