@@ -11,12 +11,35 @@ const char *const test_to_str[] = {
     [Five] = "Five"
 };
 
+
+
+typedef struct week_t{
+
+    char *monday;
+    char *tuesday;
+    char *wednesday;
+    char *thursday;
+    char *friday;
+
+}week_t;
+
+week_t day = {.monday    = "Monday",
+              .tuesday   = "Tuesday",
+              .wednesday = "Wednesday",
+              .thursday  = "Thursday",
+              .friday    = "Friday"}; 
+
+
+
+
+
 int main(int argc, char *argv[])
 {
     test_t test_nums;
     int test_arr[6];
 
     int nums[] = {One, Two, Three, Four, Five};
+
 
     for(int i = 0; i < 5; i++)
     {
