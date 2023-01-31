@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "test.h"
+
 
 typedef struct week_s{
 
@@ -33,8 +35,10 @@ int main(int argc, char *argv[])
 
     int nums[] = {One, Two, Three, Four, Five};
 
+    //char *dir_name = "tmp";
+    char *file_name = "crib_checkout.txt";
 
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < 6; i++)
     {
         test_nums = nums[i];
 
@@ -47,8 +51,20 @@ int main(int argc, char *argv[])
     {
         test_nums = i;
         test_arr[i] = test_nums;
-        printf("Nums: %s\n", test_to_str[test_arr[i]]);
+        
+        if(test_to_str[test_arr[i]] == "One")
+        {
+            printf("\033[1;30;42m Passed \033[0m\n");
+            //fprintf(fptr, "Result: %s\n", "Passed");
+        }
+        else
+        {
+            printf("\033[1;37;41m Failed \033[0m\n");
+            //fprintf(fptr, "Result: %s\n", "Failed");
+        }
     }
+
+    
 
     if( argc == 2 ) {
         
@@ -64,6 +80,7 @@ int main(int argc, char *argv[])
         printf("One argument expected.\n");
     }
     
+    //fclose(fptr);
     return 0;
 }
 
