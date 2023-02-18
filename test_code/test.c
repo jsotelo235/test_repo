@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "test.h"
 
+#define STR(x) #x
 typedef struct week_s{
 
     char *monday;
