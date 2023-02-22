@@ -4,83 +4,32 @@
 #include "test.h"
 
 #define STR(x) #x
-typedef struct week_s{
 
-    char *monday;
-    char *tuesday;
-    char *wednesday;
-    char *thursday;
-    char *friday;
+#define HIGH 0x1
+#define LOW 0x0
 
-}week_t;
-
-typedef enum months_e {
-    JAN,
-    FEB,
-    MAR,
-    APR,
-    MAY,
-    JUN,
-    JUL,
-    AUG,
-    SEP,
-    OCT,
-    NOV,
-    DEC
-} months_t;
-
-week_t day = {
-    .monday = "Monday", 
-    .tuesday = "Tuesday", 
-    .wednesday = "Wednesday", 
-    .thursday = "Thursday", 
-    .friday = "Friday"
+in_t in ={
+    .mask[0] = HIGH,
+    .mask[1] = ~HIGH
 };
 
-const char *const test_to_str[] = {
-    [One] = "One",
-    [Two] = "Two",
-    [Three] = "Three",
-    [Four] = "Four",
-    [Five] = "Five"
+out_t out={
+    .mask[0] = LOW,
+    .mask[1] = ~LOW
 };
-
-const char *const months_to_str[] = {
-    [JAN] = "January",
-    [FEB] = "February",
-    [MAR] = "March",
-    [APR] = "April",
-    [MAY] = "May",
-    [JUN] = "June",
-    [JUL] = "JULY",
-    [AUG] = "August",
-    [SEP] = "September",
-    [OCT] = "October",
-    [NOV] = "November",
-    [DEC] = "December"};
-
-typedef struct user_filter_s{
-    int months;
-}user_filter_t;
-
-user_filter_t filter={
-    .months = JAN
-};
-
-static bool test_months(months_t months);
 
 int main(int argc, char *argv[])
 {
     test_t test_nums;
+    in_t in;
+    out_t out;
+
     int test_arr[6];
 
     int nums[] = {One, Two, Three, Four, Five};
 
     //char *dir_name = "tmp";
     char *file_name = "crib_checkout.txt";
-
-    {
-    }
 
     printf("\nStrings...\n\n");
     
@@ -129,6 +78,19 @@ int main(int argc, char *argv[])
         printf("One argument expected.\n");
     }
     
+    in = get_in_status();
+    out = get_out_status();
+
+    if (!test_status(in.mask[0]))
+    {
+        printf("Here1\n");
+    }
+
+    if (!test_status(in.mask[1]))
+    {
+        printf("Here2\n");
+    }
+
     //fclose(fptr);
     return 0;
 }
@@ -141,7 +103,7 @@ int start_test(int argc, char *argv[])
     return 1;
 }
 
-static bool test_months(months_t months)
+bool test_months(months_t months)
 {
     bool result = false;
 
@@ -158,6 +120,34 @@ static bool test_months(months_t months)
         {
             return true;
         }
+    }
+
+    return result;
+}
+
+in_t get_in_status(void)
+{
+    return in;
+}
+
+out_t get_out_status(void)
+{
+    return out;
+}
+
+bool test_status(int val)
+{
+    bool result = false;
+
+    if(val == HIGH)
+    {
+        printf("ON\n");
+        result = false;
+    }
+    else
+    {
+        printf("OFF\n");
+        result = false;
     }
 
     return result;
