@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
     if (!test_status(in.mask[1]))
     {
-        printf("Here\n");
+        printf("Here2\n");
     }
 
     //fclose(fptr);
