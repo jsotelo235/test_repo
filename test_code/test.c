@@ -94,6 +94,7 @@ int main(int argc, char *argv[])
     printf("Hello world 1\n");
     printf("Hello world 2\n");
     printf("Hello world 3\n");
+    printf("rebasing from master to branch\n");
 
     //fclose(fptr);
     return 0;
