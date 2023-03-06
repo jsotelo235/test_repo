@@ -91,7 +91,8 @@ int main(int argc, char *argv[])
         printf("Here2\n");
     }
 
-    printf("Hello world\n");
+    printf("Hello world 1\n");
+    printf("Hello world 2\n");
 
     //fclose(fptr);
     return 0;
