@@ -17,6 +17,6 @@
 #define WHITE       "\033[37m"
 
 // Function declarations
-void print_color(const char *color_code, const char *format, ...);
+void printf_color(const char *color_code, const char *format, ...);
 
 #endif /* COLORS_H */

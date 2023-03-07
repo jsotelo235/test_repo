@@ -32,9 +32,10 @@ int main(int argc, char *argv[])
     //char *dir_name = "tmp";
     char *file_name = "crib_checkout.txt";
 
-    print_color(MAGENTA, "\nStrings...\n\n");
-    printf("\033[1;30;42mTEST\033[0m\n");
+    printf_color(MAGENTA, "\nStrings...\n\n");
     
+    char *str = "Hello World";
+
     for(int i = 0; i < 5; i++)
     {
         test_nums = i;
@@ -42,11 +43,13 @@ int main(int argc, char *argv[])
         
         if(test_to_str[test_arr[i]] == "One")
         {
-            print_color(GREEN_BG, "Passed: %s %d %d\n", test_to_str[test_arr[i]], 1, 8);
+            printf_color(GREEN_BG, "Passed:");
+            printf_color(RESET, " %s %d %.2f %s\n", test_to_str[test_arr[i]], 1.5, 8 , str);
         }
         else
         {
-            print_color(RED_BG, "Failed: %s %d\n", test_to_str[test_arr[i]], 0);
+            printf_color(RED_BG, "Failed:");
+            printf_color(RESET, " %s %d\n", test_to_str[test_arr[i]], 0);
         }
     }
 
