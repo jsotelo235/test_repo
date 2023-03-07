@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     char *file_name = "crib_checkout.txt";
 
     print_color(MAGENTA, "\nStrings...\n\n");
+    printf("\033[1;30;42mTEST\033[0m\n");
     
     for(int i = 0; i < 5; i++)
     {
