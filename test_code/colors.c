@@ -14,6 +14,7 @@ void print_color(const char *color_code, const char *format, ...)
         vprintf(format, args);
         printf(RESET);
         va_end(args);
+        fflush(stdout);
     }
     else 
     {
@@ -21,5 +22,6 @@ void print_color(const char *color_code, const char *format, ...)
         va_start(args, format);
         vprintf(format, args);
         va_end(args);
+        fflush(stdout);
     }
 }
