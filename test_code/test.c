@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "test.h"
+#include "colors.h"
 
 #define STR(x) #x
 
@@ -40,13 +41,11 @@ int main(int argc, char *argv[])
         
         if(test_to_str[test_arr[i]] == "One")
         {
-            printf("\033[1;30;42m Passed \033[0m\n");
-            //fprintf(fptr, "Result: %s\n", "Passed");
+            print_color(GREEN_BG, "Passed: %s %d %d\n", test_to_str[test_arr[i]], 1, 8);
         }
         else
         {
-            printf("\033[1;37;41m Failed \033[0m\n");
-            //fprintf(fptr, "Result: %s\n", "Failed");
+            print_color(RED_BG, "Failed: %s %d\n", test_to_str[test_arr[i]], 0);
         }
     }
 
