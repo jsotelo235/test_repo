@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     //char *dir_name = "tmp";
     char *file_name = "crib_checkout.txt";
 
-    printf("\nStrings...\n\n");
+    print_color(MAGENTA, "\nStrings...\n\n");
     
     for(int i = 0; i < 5; i++)
     {
