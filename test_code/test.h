@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+
+typedef struct pump_s{
+    bool valve_close;
+
+} pump_t;
+
 typedef enum test_e
 {
     One,

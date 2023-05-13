@@ -19,6 +19,16 @@ out_t out={
     .mask[1] = ~LOW
 };
 
+pump_t left_pump = {
+    .valve_close = false
+};
+
+bool is_timer_expired(int* timer, int delay);
+
+void pump_model(pump_t *pump_int, bool *close_cmd);
+
+bool close_cmd = true;
+
 int main(int argc, char *argv[])
 {
     test_t test_nums;
@@ -35,6 +45,21 @@ int main(int argc, char *argv[])
     printf_color(MAGENTA, "\nStrings...\n\n");
     
     char *str = "Hello World";
+
+    int timer = 0;
+    int delay = 3;
+    double num = 0;
+    
+    while (!is_timer_expired(&timer, delay))
+    {
+        num += (0.5 * 1.33);
+        // do something while timer is running
+        printf("Num: %f\n", num);
+    }
+
+    bool *pump_ptr = &close_cmd;
+
+    pump_model(&left_pump, pump_ptr);
 
     for(int i = 0; i < 5; i++)
     {
@@ -161,4 +186,27 @@ bool test_status(int val)
     }
 
     return result;
+}
+
+void pump_model(pump_t *pump_int, bool *close_cmd)
+{
+    pump_int->valve_close = *close_cmd;
+
+    printf("Close: %d\n", pump_int->valve_close);
+}
+
+bool is_timer_expired(int* timer, int delay)
+{
+    bool ret_val = false;
+
+    if (*timer >= delay)
+    {
+        ret_val = true;
+    }
+    else
+    {
+        (*timer)++;
+    }
+
+    return ret_val;
 }
